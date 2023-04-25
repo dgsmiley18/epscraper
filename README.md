@@ -3,6 +3,7 @@
 ![GitHub stars](https://img.shields.io/github/stars/dgsmiley18/EpCrawler.svg?style=social&label=Star&maxAge=2592000)
 ![Python](https://img.shields.io/badge/python-v3.6+-blue.svg)
 ![License](https://img.shields.io/badge/license-GPLv3-blue.svg)
+![Pip url](https://img.shields.io/pypi/v/epcrawler.svg)
 
 ## **epcrawler** - get episode names from anidb
 
@@ -17,8 +18,11 @@
 
 ## 💾 Installation
 
-To install Epcrawler, simply use `git clone https://github.com/dgsmiley18/EpCrawler.git`:
+The recommended installation method is using `pip`:
 
+```bash
+pip install epcrawler
+```
 
 Check the [command line](%EF%B8%8F-command-line-interface) section for supported commands.
 
