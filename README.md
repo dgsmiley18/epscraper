@@ -1,4 +1,6 @@
-# Anime Episode Name Scraper"
+# Anime Episode Name Scraper
+
+![GitHub stars](https://img.shields.io/github/stars/dgsmiley18/EpCrawler.svg?style=social&label=Star&maxAge=2592000)
 ![Python](https://img.shields.io/badge/python-v3.6+-blue.svg)
 ![License](https://img.shields.io/badge/license-GPLv3-blue.svg)
 
@@ -6,7 +8,7 @@
 
 ## 🎨 Table of Contents
 
-- [Anime Episode Name Scraper"](#anime-episode-name-scraper)
+- [Anime Episode Name Scraper](#anime-episode-name-scraper)
   - [**epcrawler** - get episode names from anidb](#epcrawler---get-episode-names-from-anidb)
   - [🎨 Table of Contents](#-table-of-contents)
   - [💾 Installation](#-installation)
