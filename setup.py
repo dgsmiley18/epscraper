@@ -18,7 +18,7 @@ setup(
     url="https://github.com/dgsmiley18/epcrawler",
     packages=["epcrawler"],
     license="GPLv3",
-    entry_points={'console_scripts': ['anime_finder=epcrawler.anime_finder:main']},
+    entry_points={'console_scripts': ['epcrawler=epcrawler.__main__:main']},
     install_requires=[
         "beautifulsoup4",
         "requests"
