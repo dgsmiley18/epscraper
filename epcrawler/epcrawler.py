@@ -1,5 +1,4 @@
 import requests
-import argparse
 from bs4 import BeautifulSoup
 
 
@@ -33,8 +32,7 @@ def get_episode_name(anime_name, output_file):
                     ep_name = ep_name.replace("\n", "")
                     # Remove the spaces
                     ep_name = ep_name.replace(" ", ".")
-                    # print(ep_name)
-                    # escreva os nomes dos episódios no arquivo
+                    # Type the name of the episodes on the file
                     writer.write(ep_name + "\n")
             return print("The file was created successfully!")
         else:

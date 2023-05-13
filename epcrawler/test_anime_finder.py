@@ -1,5 +1,5 @@
 import subprocess
-from anime_finder import get_episode_name
+from epcrawler import get_episode_name
 
 
 def test_episode_name():
@@ -13,5 +13,5 @@ def test_episode_name():
 
 
 def test_help():
-    output = subprocess.check_output(["python", "anime_finder.py", "--help"])
+    output = subprocess.check_output(["python", "__main__.py", "--help"])
     assert b"specify the anime name" in output
