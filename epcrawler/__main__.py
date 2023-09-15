@@ -1,6 +1,7 @@
 from epcrawler import get_episode_name
 import argparse
 
+
 def main():
     parser = argparse.ArgumentParser(
         prog="Episode Finder",
@@ -27,5 +28,7 @@ def main():
     # Displays the information on the console
     args = parser.parse_args()
     get_episode_name(args.name, args.output)
+
+
 if __name__ == "__main__":
     main()

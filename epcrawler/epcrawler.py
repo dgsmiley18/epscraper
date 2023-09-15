@@ -1,21 +1,22 @@
 import requests
 from bs4 import BeautifulSoup
+import re
 
 
-def get_episode_name(anime_name, output_file):
+def get_episode_name(anime_name, output_file="titles.txt"):
     # Remove the spaces and replace them with a plus sign
     anime_name = anime_name.replace(" ", "+")
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0"
     }
-    url = f"https://anidb.net/anime/?adb.search={anime_name}&do.search=1"
+    url = f"https://anidb.net/anime/?adb.search={anime_name}&do.search=1&entity.animetb=1&field.titles=1"
     html = requests.get(url=url, headers=headers).content
     soup = BeautifulSoup(html, "html.parser")
 
     # Find the first result
+    result = soup.find_all("tr")[0].find("a").get("href")
 
-    result = soup.find("td", class_="name main anime").find("a").get("href")
-    url = f"https://anidb.net{result}"
+    url = result
 
     html = requests.get(url=url, headers=headers).content
     soup = BeautifulSoup(html, "html.parser")
@@ -28,15 +29,16 @@ def get_episode_name(anime_name, output_file):
                 # Find the episode name
                 for tr in trs:
                     ep_name = tr.find("td", class_="title name episode").get_text()
-                    # Remove the new line
-                    ep_name = ep_name.replace("\n", "")
-                    # Remove the spaces
-                    ep_name = ep_name.replace(" ", ".")
+                    # Remove the new line and spaces
+                    ep_name = (
+                        ep_name.replace("\n", "")
+                        .replace(" ", ".")
+                        .replace("\t", "")
+                        .replace("-", ".")
+                    )
+                    name_result = re.sub(r'[\\/:\,`"*?<>|]+', "", ep_name)
                     # Type the name of the episodes on the file
-                    writer.write(ep_name + "\n")
+                    writer.write(name_result + "\n")
             return print("The file was created successfully!")
-        else:
-            return print("The output file must be a .txt file")
-    except Exception as e:
-        print("Error: ", e)
-        return None
+    except writer.errors as error:
+        return print("Error: ", error)
