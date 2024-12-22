@@ -13,10 +13,10 @@ def get_episode_name(anime_name, output_file="titles.txt"):
     html = requests.get(url=url, headers=headers).content
     soup = BeautifulSoup(html, "html.parser")
 
-    # Find the first result
-    result = soup.find_all("tr")[0].find("a").get("href")
+    # Find the first result with the link
+    result = soup.find_all("tr", class_="g_odd")[0].find("a").get("href")
 
-    url = result
+    url = f"https://anidb.net{result}"
 
     html = requests.get(url=url, headers=headers).content
     soup = BeautifulSoup(html, "html.parser")
