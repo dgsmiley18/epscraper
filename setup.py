@@ -15,10 +15,10 @@ setup(
     description=metadata['description'],
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/dgsmiley18/epcrawler",
-    packages=["epcrawler"],
+    url="https://github.com/dgsmiley18/epscraper",
+    packages=["epscraper"],
     license="GPLv3",
-    entry_points={'console_scripts': ['epcrawler=epcrawler.__main__:main']},
+    entry_points={'console_scripts': ['epscraper=epscraper.__main__:main']},
     install_requires=[
         "beautifulsoup4",
         "requests"

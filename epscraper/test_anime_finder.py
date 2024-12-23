@@ -1,5 +1,5 @@
 import subprocess
-from epcrawler import get_episode_name
+from epscraper import get_episode_name
 
 
 def test_episode_name():

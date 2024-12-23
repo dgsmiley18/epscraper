@@ -1,4 +1,4 @@
-from epcrawler import get_episode_name
+from epscraper import get_episode_name
 import argparse
 
 
